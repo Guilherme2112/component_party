@@ -271,7 +271,23 @@ class ClientsController < ApplicationController
 end
 ```
 
-Note that, different to rails, we will add a 'pages' folder at the beginning of your path. This is done so you can can have isolated components that represents each action in a isolated namespace.
+Note that, differently from rails, we will add a 'pages' folder at the beginning of your path. This is done so you can can have isolated components that represents each action in a isolated namespace.
+
+## How to render component pages insted of views by default?
+
+Just call 'render_components_by_default!' inside your controller. If you want all your controllers to behave like this you can put this command in your ApplicationController:
+
+```ruby
+class ApplicationController < ActionController::Base
+  render_components_by_default!
+end
+
+```
+
+This is not a global in order to keep compatibility with other gems like Devise that does not support this gem.
+
+**PS:** Your mailers will still use views and not components 
+
 
 # Style namespacing
 
