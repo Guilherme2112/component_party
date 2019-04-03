@@ -20,7 +20,7 @@ module ComponentParty
       end
 
       def decorate_template(template)
-        template
+        ComponentParty::ActionView::ComponentRenderer::TagWrapperDecorator.new(template)
       end
 
       def create_view_model(component_path, view_model_data, context)

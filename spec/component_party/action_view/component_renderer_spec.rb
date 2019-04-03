@@ -46,6 +46,9 @@ describe ComponentParty::ActionView::ComponentRenderer do
     end
   end
 
+  specify '#decorate_template' do
+    expect(subject.decorate_template(double)).to be_an_instance_of(ComponentParty::ActionView::ComponentRenderer::TagWrapperDecorator)
+  end
 
   describe '#find_vm_class' do
     it "returns a default instance if custom vm file doesn't exists" do
